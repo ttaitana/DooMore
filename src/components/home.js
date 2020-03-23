@@ -5,25 +5,25 @@ import "../style/main.scss";
 import { ReactComponent as Mlogo } from "../assets/main_logo.svg";
 import Navbar from "./subcomponent/navbar";
 import { TweenMax, Expo } from "gsap";
+// import homeVideo from "../assets/videos/home_video.mp4";
 
 export default function Home() {
   let box = useRef(null);
+  let vid = useRef(null);
   useEffect(() => {
     TweenMax.to(box, 0, {
-      height: '100vh',
+      height: "100vh",
       opacity: 1
     }).then(() => {
-      TweenMax.to(box, .6, {
+      TweenMax.to(box, 0.6, {
         y: box.offsetHeight,
-        delay: .1
+        delay: 0.1
       }).then(() => {
-        TweenMax.to(
-          box, 0, {
-            display: 'none'
-          }
-        )
+        TweenMax.to(box, 0, {
+          display: "none"
+        });
       });
-    })
+    });
   });
 
   return (
@@ -49,7 +49,20 @@ export default function Home() {
             </FadeIn>
           </div>
         </div>
+        {/* <div className="video-container">
+          <div
+            className="box-transition"
+            ref={el => {
+              vid = el;
+            }}
+          ></div>
+        </div> */}
       </FadeIn>
+      {/* <div className="video-container">
+        <video autoPlay loop className="myVideo">
+          <source src={homeVideo} type="video/mp4"/>
+        </video>
+      </div> */}
     </div>
   );
 }

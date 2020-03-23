@@ -13,7 +13,9 @@ export default class Navbar extends Component {
       <div className="nav">
         <div className="nav-header">
           <div className="nav-title">
-            <Logo width={65} />
+            <Link to="/">
+              <Logo width={65} />
+            </Link>
           </div>
         </div>
         <div className="nav-btn">
@@ -28,15 +30,15 @@ export default class Navbar extends Component {
           <Link to="/home">
             <Shop width={65} id="shop-logo" />
           </Link>
-            <Popup
-              trigger={<Letter width={90} id="letter-logo" />}
-              modal
-              closeOnDocumentClick
-              repositionOnResize
-              lockScroll
-            >
-              <Contract />
-            </Popup>
+          <Popup
+            trigger={<Letter width={90} id="letter-logo" />}
+            modal
+            closeOnDocumentClick
+            repositionOnResize
+            lockScroll
+          >
+            <Contract />
+          </Popup>
         </div>
       </div>
     );

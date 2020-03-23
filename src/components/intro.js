@@ -41,7 +41,7 @@ export default function Intro() {
           box = el;
         }}
       ></div>
-      <video autoPlay id="myVideo" onEnded={myHandler}>
+      <video autoPlay className="myVideo" onEnded={myHandler}>
         <source src={myIntro} type="video/mp4" />
       </video>
     </div>

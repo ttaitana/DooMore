@@ -4,6 +4,8 @@ import logo from "../assets/landing_logo.png";
 import logo_ring from "../assets/landing_borde.png";
 import FadeIn from "react-fade-in";
 import "../style/main.scss";
+import "../style/animate.scss";
+import { ReactComponent as Logo } from '../assets/landing_logo.svg'
 
 export default class Landing extends Component {
   render() {
@@ -19,8 +21,9 @@ export default class Landing extends Component {
         </FadeIn>
         <Link to="/intro">
           <FadeIn delay="100" className="logo-wrapper">
-            <img src={logo} alt="" className="logo" />
-            <img src={logo_ring} alt="" className="ring" />
+            {/* <img src={logo} alt="" className="logo" />
+            <img src={logo_ring} alt="" className="ring" /> */}
+            <Logo width={250} className="main-logo"/>
           </FadeIn>
         </Link>
       </div>

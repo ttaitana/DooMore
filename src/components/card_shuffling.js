@@ -1,10 +1,11 @@
 import React, { useRef, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-
-import { TweenMax, Power3 } from "gsap";
+import FadeIn from "react-fade-in";
+import { TweenMax, Expo } from "gsap";
+import { Controller, Scene } from "react-scrollmagic";
 
 export default function CardShuffer() {
-  let wrapper = useRef(null);
+  let butto = useRef(null);
   let card1 = useRef(null);
   let card2 = useRef(null);
   let card3 = useRef(null);
@@ -13,24 +14,24 @@ export default function CardShuffer() {
   let history = useHistory();
 
   const nextPage = () => {
-    TweenMax.to(wrapper, 1, {
-      scale: 1,
-      ease: Power3.easeInOut
-    }).then(() => {
+      TweenMax.to(butto, 1, {
+        opacity: 0,
+        ease: Expo.easeIn
+      })
       TweenMax.to(card1, 1, {
         opacity: 0,
         y: 0,
-        ease: Power3.easeIn
+        ease: Expo.easeIn
       });
       TweenMax.to(card2, 1, {
         opacity: 0,
         y: -2400,
-        ease: Power3.easeIn
+        ease: Expo.easeIn
       });
       TweenMax.to(card3, 1, {
         opacity: 0,
         y: 0,
-        ease: Power3.easeIn
+        ease: Expo.easeIn
       });
       TweenMax.to(
         card4,
@@ -38,7 +39,7 @@ export default function CardShuffer() {
         {
           opacity: 0,
           y: -2400,
-          ease: Power3.easeIn
+          ease: Expo.easeIn
         },
         0.5
       ).then(() => {
@@ -46,64 +47,89 @@ export default function CardShuffer() {
           history.push("/name");
         }, 500);
       });
+  };
+
+  const handleScroll = function(event) {
+    TweenMax.to(card1, 1, {
+      y: -3000 + window.scrollY * 0.5,
+      ease: Expo.easeOut
+    });
+    TweenMax.to(card2, 1, {
+      y: -500 - window.scrollY * 0.7,
+      ease: Expo.easeOut
+    });
+    TweenMax.to(card3, 1, {
+      y: -3000 + window.scrollY * 0.7,
+      ease: Expo.easeOut
+    });
+    TweenMax.to(card4, 1, {
+      y: -500 - window.scrollY * 0.5,
+      ease: Expo.easeOut
     });
   };
 
   useEffect(() => {
-    TweenMax.to(card1, 0.8, {
-      opacity: 1,
-      ease: Power3.easeOut,
-      y: -2400
-    });
-    TweenMax.to(card2, 0.8, {
-      opacity: 1,
-      ease: Power3.easeOut,
-      y: -900
-    });
-    TweenMax.to(card3, 0.8, {
-      opacity: 1,
-      ease: Power3.easeOut,
-      y: -2300
-    });
-    TweenMax.to(card4, 0.8, {
-      opacity: 1,
-      ease: Power3.easeOut,
-      y: -800
-    });
-  }, []);
+    window.addEventListener("scroll", handleScroll);
+    setTimeout(() => {
+      let btn = document.querySelector('.btn-border')
+      btn.style.opacity = 1
+    }, 2000)
+  }, [])
 
   return (
-    <div
-      className="flex-wrapper"
-      onClick={nextPage}
-      ref={el => {
-        wrapper = el;
-      }}
-    >
-      <div
-        className="card-bg"
-        ref={el => {
-          card1 = el;
-        }}
-      ></div>
-      <div
-        className="card-bg"
-        ref={el => {
-          card2 = el;
-        }}
-      ></div>
-      <div
-        className="card-bg"
-        ref={el => {
-          card3 = el;
-        }}
-      ></div>
-      <div
-        className="card-bg"
-        ref={el => {
-          card4 = el;
-        }}
-      ></div>
+    <div id="card-page-wrap">
+      <div className="btn-wrapper">
+        <div id="card-btn">
+          <div className="btn btn-border" onClick={nextPage} ref={el => {butto = el}}>
+            Click me
+          </div>
+        </div>
+      </div>
+      <FadeIn duration={800}>
+      <Controller>
+      <Scene
+          duration={4000}
+          pin={{ pushFollowers: false }}
+          reverse={true}
+          indicators={false}
+          offset={80}
+          triggerHook={0.14}
+        >
+          <div
+            className="flex-wrapper"
+            >
+              <div
+                className="card-bg"
+                id="cardNo1"
+                ref={el => {
+                  card1 = el;
+                }}
+              ></div>
+              <div
+                className="card-bg"
+                id="cardNo2"
+                ref={el => {
+                  card2 = el;
+                }}
+              ></div>
+              <div
+                className="card-bg"
+                id="cardNo3"
+                ref={el => {
+                  card3 = el;
+                }}
+              ></div>
+              <div
+                className="card-bg"
+                id="cardNo4"
+                ref={el => {
+                  card4 = el;
+                }}
+              ></div>
+          </div>
+        </Scene>
+      </Controller>
+      </FadeIn>
     </div>
   );
 }

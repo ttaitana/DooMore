@@ -4,10 +4,11 @@ $font-color: #c59e6e;
 // font-family: 'Prompt', sans-serif;
 html {
   scroll-behavior: smooth;
+  font-size: 62.5%;
 }
 :root {
   color: $font-color;
-  background: #f7f1eb;
+  // background: #f7f1eb;
 }
 #my-scrollbar {
   width: 100vw;
@@ -17,6 +18,7 @@ html {
 
 body {
   font-family: "Prompt", sans-serif;
+  font-size: 1.4em;
 }
 
 @keyframes wiggle {
@@ -107,7 +109,7 @@ body {
 
 .logo-wrapper {
   padding-bottom: 5%;
-  margin-top: 18%;
+  margin-top: 5%;
   .logo {
     width: 8%;
     margin: auto;
@@ -210,7 +212,7 @@ select {
   }
   .main-logo {
     // transition: 0.3s ease;
-    margin-top: 5rem;
+    margin-top: 50%;
     #mainLogo {
       transition: 0.3s ease;
       transform-origin: center;
@@ -228,7 +230,22 @@ select {
 .video-container {
   width: 100vw;
   height: 100vh;
-  background: white;
+  // background: white;
+
+  .myVideo {
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -o-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+  }
 }
 .box-transition {
   position: absolute;
@@ -261,20 +278,7 @@ select {
   }
 }
 
-#myVideo {
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -ms-transform: translateX(-50%) translateY(-50%);
-  -o-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
-}
+
 
 // btn zone
 .btn {
@@ -296,37 +300,57 @@ select {
   border: 1px transparent solid;
   border-radius: 1rem;
 }
+.btn-border{
+  width: 10rem;
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  background: white;
+  color: $font-color;
+  border: 1px $font-color solid;
+  border-radius: 1rem;
+  opacity: 0;
+  transition: .3s;
+}
 .btn-wrapper-row {
   margin: 4rem 0;
   display: flex;
   justify-content: center;
 }
+.scrollmagic-pin-spacer{
+  overflow: hidden !important;
+}
 
 .flex-wrapper {
-  height: 150vw;
+  height: 100vw;
   padding: 0 15%;
+  top: 0 !important;
   display: flex;
   justify-content: center;
   overflow: hidden;
-  transform: scale(1.1);
   .card-bg {
-    opacity: 0;
+    // opacity: 0;
     width: 33.33%;
     margin: 0 1rem;
     background: url("../assets/card_1.png") round;
     background-size: contain;
     background-repeat: space;
     will-change: tranform;
-    transition: 0.5s ease-out;
+    // transition: .3s;
     // transition-duration: 1s;
     height: 1000vh;
   }
   .card-bg:nth-child(odd) {
-    transform: translateX(0) translateY(-2700px) translateZ(0);
+    transform: translateX(0) translateY(-3000px) translateZ(0);
   }
   .card-bg:nth-child(even) {
     transform: translateX(0) translateY(-500px) translateZ(0);
   }
+}
+#card-page-wrap{
+  height: 400vh;
+  overflow: hidden;
+  transform-origin: center;
+  // transform: scale(1.1);
 }
 .btn-wrapper {
   width: 100vw;
@@ -338,11 +362,20 @@ select {
   left: 0;
   top: 0;
   #card-btn {
-    top: 50%;
-    left: 50%;
+    // top: 50%;
+    // left: 50%;
+    // position: fixed;
+    // // background: white;
+    // border-radius: 1rem;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     position: fixed;
-    background: white;
-    border-radius: 1rem;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
   }
 }
 .container{
