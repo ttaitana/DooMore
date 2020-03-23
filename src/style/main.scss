@@ -206,12 +206,14 @@ select {
   width: 100%;
   background-color: transparent;
   color: $font-color;
+  font-family: "LibreBaskerville";
   // box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
   margin-bottom: 30px;
   text-align: center;
 }
 ::placeholder {
   opacity: 0.3;
+  font-family: "LibreBaskerville";
 }
 .send-contract {
   padding: 1.5rem 2rem;
@@ -362,6 +364,7 @@ select {
 }
 .scrollmagic-pin-spacer {
   overflow: hidden !important;
+  height: 100vh;
 }
 
 .flex-wrapper {

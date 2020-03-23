@@ -10,7 +10,7 @@ import { ReactComponent as Decorator } from "../assets/home_decolator.svg";
 
 export default function Landing() {
   return (
-    <div>
+    <div className="scrollmagic-pin-spacer">
       <div className="video-container">
         <FadeIn transitionDuration="500">
           <Decorator width={150} id="de_left" />
@@ -27,7 +27,7 @@ export default function Landing() {
       </FadeIn>
       <FadeIn delay="100" className="logo-wrapper">
         <Link to="/intro">
-          <Logo width={250} className="main-logo" />
+          <Logo width={250}/>
         </Link>
       </FadeIn>
     </div>

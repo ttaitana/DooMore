@@ -28,7 +28,7 @@ export default class GetName extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="eng">
         <div className="video-container">
           <FadeIn transitionDuration="500" >
             <video autoPlay loop className="myVideo">

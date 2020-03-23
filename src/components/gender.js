@@ -25,7 +25,7 @@ export default class Gender extends Component {
     } = this.props;
     const { name } = params;
     return (
-      <div>
+      <div className="eng">
         <div className="video-container">
           <FadeIn transitionDuration="500">
             <video autoPlay loop className="myVideo">
