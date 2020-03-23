@@ -17,7 +17,7 @@ export default function Landing() {
           <Decorator width={150} id="de_right" />
         </FadeIn>
       </div>
-      <FadeIn delay="400" transitionDuration="1000" className="text-contain">
+      <FadeIn delay="500" transitionDuration="1000" className="text-contain">
         <h1>หากคุณกำลังท้อแท้กับโชคชะตา</h1>
         <h1>หากคุณกำลังเหนื่อยล้ากับชีวิต</h1>
         <h1>

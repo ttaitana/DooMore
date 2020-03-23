@@ -17,7 +17,7 @@ export default class Contract extends Component {
         </div>
         <br/>
         <h1>CONTACT US</h1>
-        <p>เพียงกรอกรายละเอียดด้านล่างเราจะติดต่อกลับเร็วที่สุด</p>
+        <p className="thai">เพียงกรอกรายละเอียดด้านล่างเราจะติดต่อกลับเร็วที่สุด</p>
         <br/>
         <form action="" className="form">
           <p htmlFor="Name">YOUR NAME *</p>
@@ -31,7 +31,7 @@ export default class Contract extends Component {
 
           <p htmlFor="message">YOUR MESSAGE</p>
           <textarea name="message" cols="30" rows="8"></textarea>
-          <input type="submit" value="send message" className="send-contract" />
+          <input type="submit" value="send message" className="send-contract eng" />
         </form>
         <br/>
       </div>

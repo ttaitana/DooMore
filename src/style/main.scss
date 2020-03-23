@@ -1,4 +1,4 @@
-$font-color: #c59e6e;
+$font-color: #CD983F;
 $base-color: #fbfafb;
 @font-face {
   font-family: SukhumvitSet;
@@ -35,6 +35,9 @@ body {
 }
 .eng {
   font-family: "LibreBaskerville" !important;
+}
+.thai{
+  font-family: "SukhumvitSet", sans-serif;
 }
 
 .shadow {
@@ -418,6 +421,7 @@ select {
   height: 400vh;
   overflow: hidden;
   transform-origin: center;
+  background: #F7F1EB;
   // transform: scale(1.1);
 }
 .btn-wrapper {
