@@ -8,7 +8,35 @@
   }
   #outside {
     transition: 0.3s;
-    transform-origin: center;
-    // animation: rolling 20s linear infinite;
   }
+  transform-origin: center;
+  animation: rolling 20s linear infinite;
+}
+
+@keyframes de_down {
+  from{
+    transform: translateY(-50vh);
+  }
+  to{
+    transform: translateY(100vh);
+  }
+}
+@keyframes de_up {
+  from{
+    transform: translateY(100vh) rotate(180deg);
+  }
+  to{
+    transform: translateY(-50vh) rotate(180deg);
+  }
+}
+
+#de_right {
+  transform: translateY(0);
+  float: right;
+  animation: de_down 20s linear infinite;
+}
+#de_left{
+  float: left;
+  transform: translateY(0);
+  animation: de_up 20s linear infinite;
 }

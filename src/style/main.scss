@@ -1,5 +1,8 @@
 $font-color: #c59e6e;
-
+@font-face {
+  font-family: SukhumvitSet;
+  src: 'SukhumvitSet.ttc';
+}
 // font-family: 'Roboto', sans-serif;
 // font-family: 'Prompt', sans-serif;
 html {
@@ -17,8 +20,9 @@ html {
 }
 
 body {
-  font-family: "Prompt", sans-serif;
-  font-size: 1.4em;
+  font-family: "SukhumvitSet", sans-serif;
+  font-weight: normal;
+  font-size: 1.8em;
 }
 
 @keyframes wiggle {
@@ -141,15 +145,15 @@ body {
 // form
 .form {
   padding: 0 10%;
-  p{
+  p {
     padding: 0;
     margin: 0;
     text-align: left;
   }
 }
-.form-control{
+.form-control {
   width: 40rem;
-  input[type="text"]{
+  input[type="text"] {
     font-size: 2rem;
   }
 }
@@ -201,6 +205,7 @@ select {
 #home {
   // margin-top: 5rem;
   width: 100vw;
+  height: 80vh;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -208,13 +213,14 @@ select {
   align-items: center;
   overflow: hidden;
   .highlight {
-    font-size: 4rem;
+    font-size: 5rem;
   }
   .main-logo {
     // transition: 0.3s ease;
     margin-top: 50%;
     #mainLogo {
       transition: 0.3s ease;
+      align-self: flex-end;
       transform-origin: center;
       &:hover {
         transform: scale(1.2);
@@ -230,17 +236,19 @@ select {
 .video-container {
   width: 100vw;
   height: 100vh;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  position: absolute;
+  z-index: -3;
+  top: 50%;
+  left: 50%;
+  overflow: hidden;
   // background: white;
 
   .myVideo {
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    -moz-transform: translateX(-50%) translateY(-50%);
-    -ms-transform: translateX(-50%) translateY(-50%);
-    -o-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-    position: absolute;
-    top: 50%;
-    left: 50%;
     max-width: 100%;
     max-height: 100%;
     width: auto;
@@ -264,26 +272,24 @@ select {
   left: 0;
   color: #fff;
   text-align: center;
-  img{
+  img {
     transform: scaleX(-1);
-    opacity: .4;
+    opacity: 0.4;
   }
 }
-.croper{
+.croper {
   width: 500px;
   height: 736px;
   overflow: hidden;
-  video{
+  video {
     transform: translateX(-25%) scaleX(-1) !important ;
   }
 }
 
-
-
 // btn zone
 .btn {
-  width: 6rem;
-  padding: 1rem 2rem;
+  width: 8rem;
+  padding: 2rem 3rem;
   background: transparent;
   border: 1px $font-color solid;
   color: $font-color;
@@ -300,23 +306,24 @@ select {
   border: 1px transparent solid;
   border-radius: 1rem;
 }
-.btn-border{
-  width: 10rem;
+.btn-border {
+  // width: 10rem;
   padding: 1rem 2rem;
   font-size: 2rem;
-  background: white;
+  // background: white;
   color: $font-color;
-  border: 1px $font-color solid;
+  // border: 1px $font-color solid;
   border-radius: 1rem;
   opacity: 0;
-  transition: .3s;
+  transition: 0.3s;
+  cursor: pointer;
 }
 .btn-wrapper-row {
   margin: 4rem 0;
   display: flex;
   justify-content: center;
 }
-.scrollmagic-pin-spacer{
+.scrollmagic-pin-spacer {
   overflow: hidden !important;
 }
 
@@ -346,7 +353,7 @@ select {
     transform: translateX(0) translateY(-500px) translateZ(0);
   }
 }
-#card-page-wrap{
+#card-page-wrap {
   height: 400vh;
   overflow: hidden;
   transform-origin: center;
@@ -378,7 +385,7 @@ select {
     height: 100%;
   }
 }
-.container{
+.container {
   display: flex;
   flex-flow: column;
   align-items: center;

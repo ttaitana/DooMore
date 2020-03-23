@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import FadeIn from "react-fade-in";
 import { TweenMax, Expo } from "gsap";
 import { Controller, Scene } from "react-scrollmagic";
+import {ReactComponent as ClickMe} from '../assets/card_click.svg'
 
 export default function CardShuffer() {
   let butto = useRef(null);
@@ -71,8 +72,12 @@ export default function CardShuffer() {
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     setTimeout(() => {
-      let btn = document.querySelector('.btn-border')
-      btn.style.opacity = 1
+      try{
+        let btn = document.querySelector('.btn-border')
+        btn.style.opacity = 1
+      }catch(e){
+        console.log(e);
+      }
     }, 2000)
   }, [])
 
@@ -80,8 +85,9 @@ export default function CardShuffer() {
     <div id="card-page-wrap">
       <div className="btn-wrapper">
         <div id="card-btn">
-          <div className="btn btn-border" onClick={nextPage} ref={el => {butto = el}}>
-            Click me
+          <div className="btn-border" onClick={nextPage} ref={el => {butto = el}}>
+            {/* Click me */}
+            <ClickMe width={'20rem'}/>
           </div>
         </div>
       </div>
