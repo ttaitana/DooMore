@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect} from "react";
 import { useHistory } from "react-router-dom";
 import myIntro from "../assets/intro.mp4";
 import { TweenMax, Expo } from "gsap";

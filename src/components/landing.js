@@ -1,12 +1,12 @@
-import React, { useRef } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import FadeIn from "react-fade-in";
 import "../style/main.scss";
 import "../style/animate.scss";
 import { ReactComponent as Logo } from "../assets/landing_logo.svg";
 import { ReactComponent as Decorator } from "../assets/home_decolator.svg";
-import { createRef } from "react";
-import { TweenMax, Expo } from "gsap";
+// import { createRef } from "react";
+// import { TweenMax, Expo } from "gsap";
 
 export default function Landing() {
   return (

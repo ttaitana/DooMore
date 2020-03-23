@@ -7,7 +7,7 @@ import { ReactComponent as ClickMe } from "../assets/card_click.svg";
 
 export default function CardShuffer() {
   let butto = useRef(null);
-  let wrapper = useRef(null);
+  // let wrapper = useRef(null);
   let card1 = useRef(null);
   let card2 = useRef(null);
   let card3 = useRef(null);

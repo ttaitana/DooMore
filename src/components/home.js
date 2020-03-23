@@ -9,7 +9,7 @@ import { TweenMax, Expo } from "gsap";
 
 export default function Home() {
   let box = useRef(null);
-  let vid = useRef(null);
+  // let vid = useRef(null);
   useEffect(() => {
     TweenMax.to(box, 0, {
       height: "100vh",
