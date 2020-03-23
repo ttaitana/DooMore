@@ -15,6 +15,7 @@ export default class Contract extends Component {
             <p>support@domore.co.th</p>
           </div>
         </div>
+        <br/>
         <h1>CONTACT US</h1>
         <p>เพียงกรอกรายละเอียดด้านล่างเราจะติดต่อกลับเร็วที่สุด</p>
         <br/>
@@ -29,7 +30,7 @@ export default class Contract extends Component {
           <input type="text" name="subject" />
 
           <p htmlFor="message">YOUR MESSAGE</p>
-          <textarea name="message" cols="30" rows="10"></textarea>
+          <textarea name="message" cols="30" rows="8"></textarea>
           <input type="submit" value="send message" className="send-contract" />
         </form>
         <br/>

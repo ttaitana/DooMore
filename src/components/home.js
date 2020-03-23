@@ -40,9 +40,9 @@ export default function Home() {
           <div className="" id="home">
             <FadeIn delay="300" transitionDuration="500">
               <h1>
-                <span className="highlight">DO MORE</span>
+                <span className="highlight eng">DO MORE</span>
               </h1>
-              <h2>A tool for success</h2>
+              <h2 className="eng">A tool for success</h2>
               <Link to="/card">
                 <Mlogo width={280} className="main-logo" />
               </Link>

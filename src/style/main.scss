@@ -1,7 +1,12 @@
 $font-color: #c59e6e;
+$base-color: #fbfafb;
 @font-face {
   font-family: SukhumvitSet;
-  src: 'SukhumvitSet.ttc';
+  src: url("SukhumvitSet-Medium-04.ttf") format("truetype");
+}
+@font-face {
+  font-family: LibreBaskerville;
+  src: url("LibreBaskerville-Regular.ttf") format("truetype");
 }
 // font-family: 'Roboto', sans-serif;
 // font-family: 'Prompt', sans-serif;
@@ -23,6 +28,17 @@ body {
   font-family: "SukhumvitSet", sans-serif;
   font-weight: normal;
   font-size: 1.8em;
+  background: $base-color;
+}
+.allwhite{
+  background: white;
+}
+.eng {
+  font-family: "LibreBaskerville" !important;
+}
+
+.shadow {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 @keyframes wiggle {
@@ -81,8 +97,12 @@ body {
 #contract {
   height: 100vh;
   overflow-y: auto;
+  font-family: "LibreBaskerville";
+  font-size: 1.5rem;
+  background: $base-color;
   .wrapper {
-    height: 20vh;
+    padding-top: 5%;
+    height: 17vh;
     width: 100%;
     background: rgba(197, 158, 110, 0.1);
     display: flex;
@@ -99,7 +119,7 @@ body {
 }
 
 .highlight {
-  background-color: #ffbab5;
+  // background-color: #ffbab5;
 }
 
 @keyframes rolling {
@@ -144,16 +164,19 @@ body {
 
 // form
 .form {
-  padding: 0 10%;
+  padding: 4% 14%;
   p {
     padding: 0;
     margin: 0;
+    margin-bottom: 1.5rem;
     text-align: left;
   }
 }
 .form-control {
   width: 40rem;
   input[type="text"] {
+    margin-top: 1rem;
+    padding: 2rem 0;
     font-size: 2rem;
   }
 }
@@ -183,24 +206,34 @@ select {
   width: 100%;
   background-color: transparent;
   color: $font-color;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+  // box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
   margin-bottom: 30px;
   text-align: center;
 }
+::placeholder {
+  opacity: 0.3;
+}
 .send-contract {
-  padding: 19px 39px 18px 39px;
+  padding: 1.5rem 2rem;
   color: #fff;
   background-color: $font-color;
+  border-color: transparent;
   font-size: 18px;
   text-align: center;
   font-style: normal;
-  border-radius: 1rem;
-  width: 100%;
-  border-width: 1px 1px 3px;
-  box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+  border-radius: 1.5rem;
+  width: 40%;
+  // border-width: 1px 1px 3px;
+  // box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
   margin-bottom: 10px;
   cursor: pointer;
 }
+
+.sub-logo{
+  transition: .5s ease-out;
+  &:hover{
+    transform: rotate(180deg);
+  }
 
 #home {
   // margin-top: 5rem;
@@ -215,6 +248,8 @@ select {
   .highlight {
     font-size: 5rem;
   }
+  
+  }
   .main-logo {
     // transition: 0.3s ease;
     margin-top: 50%;
@@ -223,7 +258,7 @@ select {
       align-self: flex-end;
       transform-origin: center;
       &:hover {
-        transform: scale(1.2);
+        transform: scale(1.1);
       }
     }
     #text-circle {
@@ -246,7 +281,7 @@ select {
   top: 50%;
   left: 50%;
   overflow: hidden;
-  // background: white;
+  background: white;
 
   .myVideo {
     max-width: 100%;
@@ -260,7 +295,7 @@ select {
   z-index: 4;
   width: 100vw;
   height: 100vh;
-  background: $font-color;
+  background: #cd983f;
   // transition: 0.3s;
   opacity: 0;
 }
@@ -289,7 +324,7 @@ select {
 // btn zone
 .btn {
   width: 8rem;
-  padding: 2rem 3rem;
+  padding: 1.3rem 3rem;
   background: transparent;
   border: 1px $font-color solid;
   color: $font-color;
@@ -317,6 +352,9 @@ select {
   opacity: 0;
   transition: 0.3s;
   cursor: pointer;
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 .btn-wrapper-row {
   margin: 4rem 0;
@@ -334,22 +372,43 @@ select {
   display: flex;
   justify-content: center;
   overflow: hidden;
+  #cardNo1 {
+    background: url("../assets/card1.png") round;
+    background-size: contain;
+  }
+  #cardNo2 {
+    background: url("../assets/card2.png") round;
+    background-size: contain;
+  }
+  #cardNo3 {
+    background: url("../assets/card3.png") round;
+    background-size: contain;
+  }
+  #cardNo4 {
+    background: url("../assets/card4.png") round;
+    background-size: contain;
+  }
+  .setpoint {
+    transform-origin: center;
+  }
   .card-bg {
     // opacity: 0;
     width: 33.33%;
     margin: 0 1rem;
-    background: url("../assets/card_1.png") round;
-    background-size: contain;
     background-repeat: space;
     will-change: tranform;
     // transition: .3s;
+    transform-origin: 50% 25% 0;
     // transition-duration: 1s;
     height: 1000vh;
   }
   .card-bg:nth-child(odd) {
+    // transform-origin: top;
+
     transform: translateX(0) translateY(-3000px) translateZ(0);
   }
   .card-bg:nth-child(even) {
+    // transform-origin: top;
     transform: translateX(0) translateY(-500px) translateZ(0);
   }
 }

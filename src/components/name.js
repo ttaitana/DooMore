@@ -45,13 +45,14 @@ export default class GetName extends Component {
               id="username"
               name="name"
               onChange={this.setName}
+              placeholder="Enter yout name"
               required
             />
           </div>
           {/* <Link to={`/gender/${this.state.name}`}>Click me</Link> */}
           <br />
           <Link to={`/gender/${this.state.name}`} id="sendName">
-            <Next_btn width={175} className="main-logo" />
+            <Next_btn width={175} className="sub-logo" />
           </Link>
         </FadeIn>
       </div>

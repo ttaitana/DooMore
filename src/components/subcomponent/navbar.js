@@ -14,7 +14,7 @@ export default class Navbar extends Component {
         <div className="nav-header">
           <div className="nav-title">
             <Link to="/">
-              <Logo width={65} />
+              <Logo width={50} />
             </Link>
           </div>
         </div>
@@ -28,10 +28,10 @@ export default class Navbar extends Component {
 
         <div className="nav-links">
           <Link to="/home">
-            <Shop width={65} id="shop-logo" />
+            <Shop width={50} id="shop-logo" />
           </Link>
           <Popup
-            trigger={<Letter width={90} id="letter-logo" />}
+            trigger={<Letter width={70} id="letter-logo" />}
             modal
             closeOnDocumentClick
             repositionOnResize

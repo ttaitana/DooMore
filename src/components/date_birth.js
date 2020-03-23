@@ -7,6 +7,9 @@ import Decorator from "../assets/videos/asset_date.mp4";
 // What  your  date  of  birth ?
 
 export default class BirthDate extends Component {
+  constructor() {
+    super();
+  }
   render() {
     return (
       <div>
@@ -21,11 +24,15 @@ export default class BirthDate extends Component {
           <h1>What your date of birth ?</h1>
           <p>(date/month/year)</p>
           <div className="form-control">
-            <input type="text" name="name" required />
+            <input
+              type="text"
+              name="name"
+              placeholder="xx/xx/19xx"
+            />
           </div>
           {/* <Link to="/handscan">Click me</Link> */}
           <Link to={`/home`}>
-            <Next_btn width={175} className="main-logo" />
+            <Next_btn width={175} className="sub-logo" />
           </Link>
         </FadeIn>
       </div>

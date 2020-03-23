@@ -46,7 +46,7 @@ export default class Gender extends Component {
           </div>
           {/* <Link to="/birthdate">Click me</Link> */}
           <Link to={`/birthdate`}>
-            <Next_btn width={175} className="main-logo" />
+            <Next_btn width={175} className="sub-logo" />
           </Link>
         </FadeIn>
       </div>
