@@ -24,9 +24,7 @@ export default function Landing() {
           <span className="highlight eng">DO MORE</span>
         </h1>
         <h1>จะ “เปลี่ยน” ชีวิตคุณ</h1>
-      </FadeIn>
-      <FadeIn delay="100" className="logo-wrapper">
-        <Link to="/intro">
+        <Link to="/intro" className="logo-wrapper">
           <Logo width={250}/>
         </Link>
       </FadeIn>
