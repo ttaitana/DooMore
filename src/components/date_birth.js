@@ -13,7 +13,7 @@ export default class BirthDate extends Component {
   }
   render() {
     return (
-      <div className="eng">
+      <div className="eng page-wrapper">
         <div className="video-container">
           <FadeIn transitionDuration="500">
             <video autoPlay loop className="myVideo">
@@ -31,7 +31,7 @@ export default class BirthDate extends Component {
             <input type="text" name="name" placeholder="xx/xx/19xx" />
           </div>
           {/* <Link to="/handscan">Click me</Link> */}
-          <Link to={`/home`}>
+          <Link to={`/handwait`}>
             <Next_btn width={175} className="sub-logo" />
           </Link>
         </FadeIn>

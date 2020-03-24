@@ -11,6 +11,8 @@ import BirthDate from './components/date_birth'
 import CardShuffer from './components/card_shuffling'
 import Intro from './components/intro'
 import HandScan from './components/handscan'
+import HandWait from './components/handscan_wait'
+import Inconstruct from './components/inconstruct'
 
 function App() {
   return (
@@ -23,7 +25,9 @@ function App() {
         <Route path="/birthdate" component={BirthDate}/>
         <Route path="/card" component={CardShuffer}/>
         <Route path="/intro" component={Intro}/>
+        <Route path="/handwait" component={HandWait}/>
         <Route path="/handscan" component={HandScan}/>
+        <Route path="/inconstruct" component={Inconstruct}/>
       </Switch>
     </div>
   );

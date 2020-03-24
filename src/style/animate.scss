@@ -40,3 +40,19 @@
   transform: translateY(0);
   animation: de_up 20s linear infinite;
 }
+
+@keyframes hand_fadein{
+  from{
+    opacity: .5;
+    // transform: translateY(10%);
+  }
+  to{
+    opacity: 1;
+    // transform: translateY(0%);
+  }
+}
+
+#handd{
+  opacity: .5;
+  animation: hand_fadein 1s alternate 2s infinite;
+}

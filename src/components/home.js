@@ -7,11 +7,14 @@ import Navbar from "./subcomponent/navbar";
 import { TweenMax, Expo } from "gsap";
 import HandStart from "../assets/home/hand_start.mp4";
 import HandLoop from "../assets/home/hand_main.mp4";
+import BGMusic from "../assets/home/sound_s.mp3";
 // import homeVideo from "../assets/videos/home_video.mp4";
 
 export default function Home() {
   let box = useRef(null);
   // let vid = useRef(null);
+
+
   useEffect(() => {
     TweenMax.to(box, 0, {
       height: "100vh",
@@ -29,7 +32,7 @@ export default function Home() {
   });
 
   const replace = e => {
-    e.target.remove()
+    e.target.remove();
     // document.querySelector("#handLoop").play()
   };
 
@@ -48,7 +51,12 @@ export default function Home() {
         <video autoPlay loop className="myVideo2">
           <source src={HandLoop} type="video/mp4" />
         </video>
+        <audio autoPlay preload loop volume={0.5} id="music">
+          <source src={BGMusic} type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
       </div>
+
       <FadeIn delay="300" transitionDuration="500">
         <div className="">
           <Navbar />
