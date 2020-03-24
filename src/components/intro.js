@@ -33,8 +33,9 @@ export default function Intro() {
       });
     }, 500)
   };
+
   return (
-    <div className="video-container">
+    <div className="video-container allwhite">
       <div
         className="box-transition"
         ref={el => {
@@ -42,7 +43,7 @@ export default function Intro() {
         }}
       ></div>
       <video autoPlay className="myVideo" onEnded={myHandler}>
-        <source src={myIntro} type="video/mp4" />
+        <source src={myIntro} type="video/mp4"/>
       </video>
     </div>
   );

@@ -5,6 +5,8 @@ import "../style/main.scss";
 import { ReactComponent as Mlogo } from "../assets/main_logo.svg";
 import Navbar from "./subcomponent/navbar";
 import { TweenMax, Expo } from "gsap";
+import HandStart from "../assets/home/hand_start.mp4";
+import HandLoop from "../assets/home/hand_main.mp4";
 // import homeVideo from "../assets/videos/home_video.mp4";
 
 export default function Home() {
@@ -26,6 +28,11 @@ export default function Home() {
     });
   });
 
+  const replace = e => {
+    e.target.remove()
+    // document.querySelector("#handLoop").play()
+  };
+
   return (
     <div>
       <div
@@ -34,11 +41,20 @@ export default function Home() {
           box = el;
         }}
       ></div>
+      <div className="video-container">
+        <video autoPlay className="myVideo2" onEnded={replace}>
+          <source src={HandStart} type="video/mp4" />
+        </video>
+        <video autoPlay loop className="myVideo2">
+          <source src={HandLoop} type="video/mp4" />
+        </video>
+      </div>
       <FadeIn delay="300" transitionDuration="500">
         <div className="">
           <Navbar />
           <div className="" id="home">
             <FadeIn delay="300" transitionDuration="500">
+              <div className="video-container"></div>
               <h1>
                 <span className="highlight eng">DO MORE</span>
               </h1>
@@ -58,11 +74,6 @@ export default function Home() {
           ></div>
         </div> */}
       </FadeIn>
-      {/* <div className="video-container">
-        <video autoPlay loop className="myVideo">
-          <source src={homeVideo} type="video/mp4"/>
-        </video>
-      </div> */}
     </div>
   );
 }

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import FadeIn from "react-fade-in";
 import { ReactComponent as Next_btn } from "../assets/next-btn.svg";
 import Decorator from "../assets/videos/asset_gender.mp4";
+import { ReactComponent as Border } from "../assets/borde.svg";
 
 export default class Gender extends Component {
   constructor() {
@@ -34,6 +35,9 @@ export default class Gender extends Component {
           </FadeIn>
         </div>
         <FadeIn className="form container" delay="300" transitionDuration="500">
+          <div className="frame">
+            <Border width={"96vw"} />
+          </div>
           <h1>HI! {name}</h1>
           <h1>Please choose your gender</h1>
           <div className="btn-wrapper-row">

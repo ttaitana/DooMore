@@ -1,4 +1,4 @@
-$font-color: #CD983F;
+$font-color: #cd983f;
 $base-color: #fbfafb;
 @font-face {
   font-family: SukhumvitSet;
@@ -7,6 +7,10 @@ $base-color: #fbfafb;
 @font-face {
   font-family: LibreBaskerville;
   src: url("LibreBaskerville-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: SukhumvitSetLight;
+  src: url("SukhumvitSet-Light-02.ttf") format("truetype");
 }
 // font-family: 'Roboto', sans-serif;
 // font-family: 'Prompt', sans-serif;
@@ -17,6 +21,10 @@ html {
 :root {
   color: $font-color;
   // background: #f7f1eb;
+}
+.f-light {
+  font-family: "SukhumvitSetLight", sans-serif;
+  font-weight: lighter !important;
 }
 #my-scrollbar {
   width: 100vw;
@@ -36,7 +44,7 @@ body {
 .eng {
   font-family: "LibreBaskerville" !important;
 }
-.thai{
+.thai {
   font-family: "SukhumvitSet", sans-serif;
 }
 
@@ -235,6 +243,8 @@ select {
 }
 
 .sub-logo {
+  align-self: flex-end;
+  transform-origin: 50% 50%;
   transition: 0.5s ease-out;
   &:hover {
     transform: rotate(180deg);
@@ -252,12 +262,25 @@ select {
   align-items: center;
   overflow: hidden;
   .highlight {
-    font-size: 5rem;
+    font-size: 6rem;
   }
+  h2 {
+    font-size: 3rem;
+  }
+}
+.frame {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
 }
 .main-logo {
   // transition: 0.3s ease;
-  margin-top: 50%;
+  margin-top: 40%;
   align-self: flex-end;
   #mainLogo {
     transition: 0.3s ease;
@@ -271,7 +294,6 @@ select {
     transform-origin: center;
   }
 }
-
 .video-container {
   width: 100vw;
   height: 100vh;
@@ -285,13 +307,19 @@ select {
   top: 50%;
   left: 50%;
   overflow: hidden;
-  background: white;
+  background: transparent;
 
   .myVideo {
     max-width: 100%;
     max-height: 100%;
     width: auto;
     height: auto;
+  }
+  .myVideo2 {
+    max-width: 100%;
+  }
+  #handLoop {
+    visibility: hidden;
   }
 }
 .box-transition {
@@ -421,7 +449,7 @@ select {
   height: 400vh;
   overflow: hidden;
   transform-origin: center;
-  background: #F7F1EB;
+  background: #f7f1eb;
   // transform: scale(1.1);
 }
 .btn-wrapper {
