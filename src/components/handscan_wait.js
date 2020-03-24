@@ -7,7 +7,7 @@ import "../style/animate.scss";
 export default function HandWait() {
   return (
     <div className="eng eng-light" id="hand-w">
-      <FadeIn className="container" delay="150" transitionDuration={500}>
+      <FadeIn className="container"delay="500" transitionDuration="1000">
         <p className="header">Ready to discover your fate ?</p>
         <Hand_ready height={"40vh"} />
         <div className="txt-wrapper">
