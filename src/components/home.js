@@ -61,8 +61,8 @@ export default function Home() {
         <div className="">
           <Navbar />
           <div className="" id="home">
-            <FadeIn delay="300" transitionDuration="500">
-              <div className="video-container"></div>
+            <FadeIn delay="500" transitionDuration="600">
+              <h1></h1>
               <h1>
                 <span className="highlight eng">DO MORE</span>
               </h1>
