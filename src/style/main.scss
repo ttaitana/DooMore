@@ -22,7 +22,7 @@ html {
   color: $font-color;
   // background: #f7f1eb;
 }
-a{
+a {
   text-decoration: none;
 }
 .f-light {
@@ -55,6 +55,7 @@ body {
 }
 #hand-w {
   font-size: 2.5rem;
+  background: rgba(239, 202, 165, 0.14);
   .header {
     font-size: 2em;
     margin: 3rem;
@@ -116,7 +117,7 @@ body {
   padding: 0 !important;
   border: none !important;
 }
-.page-wrapper{
+.page-wrapper {
   height: 100vh;
   overflow: hidden;
 }
@@ -253,12 +254,12 @@ select {
   border-radius: 1.5rem;
   width: 40%;
   border: 1px $font-color solid;
-  transition: .3s;
+  transition: 0.3s;
   // border-width: 1px 1px 3px;
   // box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
   margin-bottom: 10px;
   cursor: pointer;
-  &:hover{
+  &:hover {
     background: transparent;
     color: $font-color;
   }
@@ -352,27 +353,6 @@ select {
   background: #cd983f;
   // transition: 0.3s;
   opacity: 0;
-}
-.overlay {
-  position: absolute;
-  top: 15%;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  color: #fff;
-  text-align: center;
-  img {
-    transform: scaleX(-1);
-    opacity: 0.4;
-  }
-}
-.croper {
-  width: 500px;
-  height: 736px;
-  overflow: hidden;
-  video {
-    transform: translateX(-25%) scaleX(-1) !important ;
-  }
 }
 .txt-wrapper {
   width: 60%;
@@ -524,4 +504,74 @@ select {
   align-items: center;
   justify-content: center;
   height: 100vh;
+}
+
+#handscan {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(239, 202, 165, 0.35);
+  height: 100vh;
+}
+
+.overlay {
+  position: absolute;
+  right: 0;
+  bottom: 10%;
+  left: 0;
+  color: #fff;
+  text-align: center;
+  img {
+    // transform: scaleX(-1);
+    // opacity: 0.4;
+    cursor: pointer;
+    z-index: 2;
+  }
+}
+.croper {
+  width: 500px;
+  height: 736px;
+  overflow: hidden;
+  video {
+    transform: translateX(-25%) scaleX(-1) !important ;
+  }
+}
+
+#forcast {
+  background: #cd983f;
+  width: 100vw;
+  height: 100vh;
+  color: white;
+  overflow: hidden;
+  .content-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 1;
+    height: 100vh;
+    h1{
+      font-size: 3.5em;
+      font-weight: normal;
+      margin-bottom: 2em;
+      margin-top: 2em;
+    }
+    .sub-logo {
+      bottom: 0;
+      align-self: flex-end;
+    }
+  }
+  .frame {
+    img {
+      position: absolute;
+      width: 100%;
+      z-index: -2;
+    }
+    svg {
+      z-index: -2;
+      position: absolute;
+    }
+  }
 }

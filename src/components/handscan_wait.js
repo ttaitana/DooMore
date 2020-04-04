@@ -13,7 +13,7 @@ export default function HandWait() {
         <div className="txt-wrapper">
           <p>Take a photo of the palms to get your personal prediction</p>
         </div>
-        <Link to={`/inconstruct`}>
+        <Link to={`/handscan`}>
           <div className="btn-long">TAKE A PHOTO</div>
         </Link>
       </FadeIn>

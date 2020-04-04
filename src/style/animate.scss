@@ -12,20 +12,36 @@
   transform-origin: center;
   animation: rolling 20s linear infinite;
 }
-
+@keyframes bouncing{
+  0%{
+    transform: scale(1.3);
+  }
+  25%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.15);
+  }
+  75%{
+    transform: scale(1.05);
+  }
+  100%{
+    transform: scale(1.1);
+  }
+}
 @keyframes de_down {
-  from{
+  from {
     transform: translateY(-30vh);
   }
-  to{
+  to {
     transform: translateY(100vh);
   }
 }
 @keyframes de_up {
-  from{
+  from {
     transform: translateY(100vh) rotate(180deg);
   }
-  to{
+  to {
     transform: translateY(-30vh) rotate(180deg);
   }
 }
@@ -35,24 +51,111 @@
   float: right;
   animation: de_down 20s linear infinite;
 }
-#de_left{
+#de_left {
   float: left;
   transform: translateY(0);
   animation: de_up 20s linear infinite;
 }
 
-@keyframes hand_fadein{
-  from{
-    opacity: .5;
+@keyframes hand_fadein {
+  from {
+    opacity: 0.5;
     // transform: translateY(10%);
   }
-  to{
+  to {
     opacity: 1;
     // transform: translateY(0%);
   }
 }
 
-#handd{
-  opacity: .5;
+.bouncing-ani{
+  transform: scale(0);
+  padding: 1em 2.5em;
+  background: #E2AC71;
+  color: white;
+  border-radius: 30px;
+  font-size: 1.1em;
+  // animation: bouncing 3s ease-in-out;
+}
+
+#handd {
+  opacity: 0.5;
   animation: hand_fadein 1s alternate 2s infinite;
+}
+.card-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(-50px);
+  .card {
+    position: relative;
+    width: 340px;
+    height: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-flow: column;
+    border-radius: 30px;
+    padding-top: 30px;
+    background: hsl(38, 59%, 53%);
+    .percent {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      svg {
+        width: 150px;
+        height: 150px;
+        transform: rotate(-90deg);
+      }
+      svg circle {
+        width: 100%;
+        height: 100%;
+        fill: none;
+        stroke: #ffffff;
+        stroke-width: 10;
+        stroke-linecap: round;
+        transform: translate(5px, 5px);
+      }
+      #indicator {
+        stroke-dasharray: 440;
+        stroke-dashoffset: calc(440 - (440 * 0) / 100);
+        stroke: #efcaa5;
+      }
+      .number {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+      }
+    }
+    .desc-txt {
+      background: white;
+      width: 100%;
+      height: 50%;
+      margin-top: 10%;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      z-index: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-flow: column;
+      .mt {
+        color: #cd983f;
+        font-size: 1.3em;
+      }
+      .st {
+        color: #808285;
+        // pointer-events: none;
+      }
+    }
+  }
 }
