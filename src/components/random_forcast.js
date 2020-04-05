@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import FadeIn from "react-fade-in";
 
 export default function Forcast() {
-  let number = Math.floor(Math.random() * Math.floor(3)) + 1;
+  let number = Math.floor(Math.random() * Math.floor(4)) + 1;
   return (
     <FadeIn>
       <div className="thai container" id="forcast">
