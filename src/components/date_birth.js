@@ -1,19 +1,51 @@
-import React, { Component } from "react";
+import React, { useRef, useEffect } from "react";
+import { TweenMax, Expo } from "gsap";
 import { Link } from "react-router-dom";
 import { ReactComponent as Next_btn } from "../assets/next-btn.svg";
 import FadeIn from "react-fade-in";
 import Decorator from "../assets/videos/asset_date.mp4";
 import { ReactComponent as Border } from "../assets/borde.svg";
+import { useHistory } from "react-router-dom";
 
 // What  your  date  of  birth ?
 
-export default class BirthDate extends Component {
-  constructor() {
-    super();
-  }
-  render() {
+export default function BirthDate() {
+  let box = useRef(null);
+  let history = useHistory();
+
+  useEffect(() => {
+    TweenMax.to(box, 0, {
+      transform: "skewY(-10deg)",
+      y: (-box.offsetHeight * 3) / 1.5,
+      ease: Expo.easeOut
+    }).then(() => {
+      TweenMax.to(box, 0, {
+        opacity: 1
+      });
+    });
+  });
+  const myHandler = () => {
+    setTimeout(() => {
+      TweenMax.to(box, 1, {
+        transform: "skewX(0deg)",
+        y: -100,
+        height: '120vh',
+        ease: Expo.easeOut
+      }).then(() => {
+        setTimeout(() => {
+          history.push("/handwait");
+        }, 0);
+      });
+    }, 500)
+  };
     return (
       <div className="eng page-wrapper">
+        <div
+        className="box-transition"
+        ref={el => {
+          box = el;
+        }}
+      ></div>
         <div className="video-container">
           <FadeIn transitionDuration="500">
             <video autoPlay loop className="myVideo">
@@ -31,11 +63,9 @@ export default class BirthDate extends Component {
             <input type="text" name="name" placeholder="xx/xx/19xx" />
           </div>
           {/* <Link to="/handscan">Click me</Link> */}
-          <Link to={`/handwait`}>
-            <Next_btn width={175} className="sub-logo" />
-          </Link>
+          <Next_btn width={175} className="sub-logo" onClick={myHandler}/>
         </FadeIn>
       </div>
     );
   }
-}
+

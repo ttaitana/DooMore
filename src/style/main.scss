@@ -119,6 +119,7 @@ body {
 }
 .page-wrapper {
   height: 100vh;
+  width: 100vw;
   overflow: hidden;
 }
 
@@ -269,6 +270,7 @@ select {
   align-self: flex-end;
   transform-origin: 50% 50%;
   transition: 0.5s ease-out;
+  cursor: pointer;
   &:hover {
     transform: rotate(180deg);
   }
@@ -515,13 +517,31 @@ select {
   height: 100vh;
 }
 
+.overlay-bg {
+  position: absolute;
+  right: 0;
+  // bottom: 10%;
+  left: 0;
+  #main_x5F_hand {
+    // opacity: 0;
+    stroke-dasharray: 2457.107421875;
+    stroke-dashoffset: 2457.107421875;
+  }
+}
+
 .overlay {
   position: absolute;
   right: 0;
-  bottom: 10%;
+  bottom: 6%;
   left: 0;
-  color: #fff;
+  // color: ;
   text-align: center;
+  .txt {
+    font-size: 1.2em;
+  }
+  .number{
+    color: white;
+  }
   img {
     // transform: scaleX(-1);
     // opacity: 0.4;
@@ -576,15 +596,15 @@ select {
   }
 }
 
-#cardflip{
-  .btn{
+#cardflip {
+  .btn {
     position: absolute;
     bottom: 10%;
   }
-  .flip-card-wrapper{
+  .flip-card-wrapper {
     margin-top: 10%;
   }
-  .btn-wrapper{
+  .btn-wrapper {
     display: flex;
     justify-content: center;
     bottom: 8%;
@@ -592,13 +612,13 @@ select {
     margin-right: auto;
     top: unset;
     opacity: 0;
-    .btn{
+    .btn {
       position: unset;
       width: unset;
       cursor: unset;
       pointer-events: none;
       border-radius: 10px;
-      background: #CD983F;
+      background: #cd983f;
       color: white;
       padding: 1em 2em;
       font-size: 1.5rem;
@@ -639,70 +659,70 @@ select {
   transform: rotateY(180deg);
 }
 
-@keyframes card-levitate{
-  0%{
+@keyframes card-levitate {
+  0% {
     transform: translateY(0) rotate(0deg);
   }
-  25%{
+  25% {
     transform: translateY(9px) rotate(1deg);
   }
-  50%{
+  50% {
     transform: translateY(0) rotate(0deg);
   }
-  75%{
+  75% {
     transform: translateY(-9px) rotate(-1deg);
   }
-  100%{
+  100% {
     transform: translateY(0) rotate(0deg);
   }
 }
-@keyframes leaf-levitate{
-  0%{
+@keyframes leaf-levitate {
+  0% {
     transform: translateY(0);
   }
-  25%{
+  25% {
     transform: translateY(14px);
   }
-  50%{
+  50% {
     transform: translateY(0);
   }
-  75%{
+  75% {
     transform: translateY(-14px);
   }
-  100%{
+  100% {
     transform: translateY(0);
   }
 }
 
-#result{
+#result {
   background: rgba(196, 154, 108, 0.1);
   width: 100vw;
   height: 100vh;
   display: flex;
-  .s40{
+  .s40 {
     opacity: 0;
     align-self: center;
     padding: 5%;
     width: 40%;
     transform: translateY(30px);
-    svg{
+    svg {
       overflow: unset;
-      #Card{
+      #Card {
         animation: card-levitate 13s linear infinite;
       }
-      #left_stick{
+      #left_stick {
         animation: leaf-levitate 17s linear infinite;
       }
-      #right_stick{
+      #right_stick {
         animation: leaf-levitate 19s linear infinite;
       }
     }
   }
-  .s60{
+  .s60 {
     align-self: center;
     padding: 5%;
     width: 60%;
-    p{
+    p {
       font-size: 1.2em;
       text-align: left;
     }

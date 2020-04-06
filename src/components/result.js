@@ -4,9 +4,11 @@ import { ReactComponent as FullCard1 } from "../assets/card_set/answer1.svg";
 import { ReactComponent as FullCard2 } from "../assets/card_set/answer2.svg";
 import { ReactComponent as FullCard3 } from "../assets/card_set/answer3.svg";
 import { ReactComponent as FullCard4 } from "../assets/card_set/answer4.svg";
+import shop_button from "../assets/card_set/shop_button.png";
+import {Link} from 'react-router-dom'
 import FadeIn from "react-fade-in";
 import { useEffect } from "react";
-import {TweenMax} from 'gsap'
+import { TweenMax } from "gsap";
 
 export default function Result() {
   let { card_id } = useParams();
@@ -32,13 +34,12 @@ export default function Result() {
     "การที่คุณจะมีรายได้หรือความมั่นคงทางการเงินนั้นนอกจากการประกอบสัมมาอาชีพที่สุจริตแล้วดวงการเงินของคุณไม่ว่าจะฐานะทางเงินแข็งแรงหรือง่อนแง่นพอมาถึงระยะนี้ก็ยังต้องไม่ประมาทไม่ใช่เพราะการเงินของคุณกำลังแย่หรอกเพียงแต่ช่วงนี้จะมีเหตุให้คุณต้องเข้มงวดในการใช้เงินพอสมควร ไม่ว่าจะเป็นเรื่องการจับจ่ายใช้สอย ดังนั้นคุณต้องรอบคอบ เพื่อป้องกันความเสียหายที่จะตามมา ถ้าไม่ประมาทก็ไม่มีอะไรต้องวิตกกังวลมากนัก เงินไหลออกไปก็ไหลกลับเข้ามาได้แน่นอน",
   ];
 
-
   useEffect(() => {
-      TweenMax.to(cardwrap, .7, {
-          opacity: 1,
-          y: 0
-      })
-  })
+    TweenMax.to(cardwrap, 0.7, {
+      opacity: 1,
+      y: 0,
+    });
+  });
 
   return (
     <div id="result" className="thai">
@@ -52,7 +53,10 @@ export default function Result() {
       </div>
       <FadeIn className="s60" delay="500" transitionDuration="700">
         <h1>{title[card_id - 1]}</h1>
-        <p>{desc[card_id - 1]}</p>
+        <p>&ensp;&ensp;{desc[card_id - 1]}</p>
+        <Link to="/inconstruct">
+          <img src={shop_button} width="200" />
+        </Link>
       </FadeIn>
     </div>
   );

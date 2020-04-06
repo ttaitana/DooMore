@@ -2,20 +2,23 @@ import React, { useRef, useEffect, useState } from "react";
 import Webcam from "react-webcam";
 import FadeIn from "react-fade-in";
 import WebcamBtn from "../assets/webcam-btn.png";
-import { TweenMax, Elastic, Power3 } from "gsap";
+import { TweenMax, Elastic, Power3, Power2 } from "gsap";
 import { Link } from "react-router-dom";
+import { ReactComponent as Overlay } from "../assets/overlay.svg";
 
 export default function HandScan() {
   const videoConstraints = {
     width: 1280,
     height: 720,
-    facingMode: "user"
+    facingMode: "user",
   };
   let imageSrc = null;
   let webcamRef = useRef(null);
   let progress = useRef(null);
   let btn_cp = useRef(null);
+  let tx_cp = useRef(null);
   let circle = useRef(null);
+  let overlay = useRef(null);
   useEffect(() => {
     console.log(webcamRef);
   });
@@ -28,60 +31,81 @@ export default function HandScan() {
     document.querySelector("#webcam").remove();
     // const c_length = circle.getTotalLength()
     // console.log(c_length);
-    var Cont = { val: 0 },
-      NewVal = 100;
-
-    TweenMax.to(btn_cp, 1, {
-      y: 10,
-      opacity: 0
-    }).then(() => {
-      document.querySelector("#webcBtn").remove();
-      document.querySelector(".overlay").style.bottom = "unset";
+    TweenMax.to(document.querySelector("#main_x5F_hand"), 4, {
+      strokeDashoffset: 0,
+      ease: Power2.easeOut,
     });
-    TweenMax.to(progress, 1, {
-      y: 0,
-      opacity: 1
+    TweenMax.to(document.querySelector("#main_x5F_hand"), 0, {
+      strokeDashoffset: 2457.107421875,
+      delay: 4
     }).then(() => {
-      // document.querySelector("#indicator").style.strokeDashoffset = 'calc(440 - (440 * 90) / 100)';
-      TweenMax.to(circle, 5, {
+      TweenMax.to(document.querySelector("#main_x5F_hand"), 4, {
         strokeDashoffset: 0,
-        ease: Power3.easeInOut,
-        delay: 0.7
-      });
-      TweenMax.to(Cont, 5, {
-        val: NewVal,
-        ease: Power3.easeInOut,
-        roundProps: "val",
-        delay: 0.7,
-        onUpdate: function() {
-          document.getElementById("ind_num").innerHTML = Cont.val;
-        }
-      })
-        .then(() => {
-          let des = document.querySelector("#desc-contain");
-          let child = des.lastElementChild;
-          while (child) {
-            des.removeChild(child);
-            child = des.lastElementChild;
-          }
-          des = document.querySelector("#forcast_link");
-          console.log(des);
-          let para = document.createElement("div");
-          para.className += "bouncing-ani eng";
-          para.style.transition = undefined;
-          para.style.width = undefined
-          var t = document.createTextNode("Get Results");
-          para.appendChild(t);
-          des.appendChild(para);
-          console.log("btn created");
-        })
-        .then(() => {
-          let btnb = document.querySelector(".bouncing-ani");
-          TweenMax.to(btnb, 2, {
-            ease: Elastic.easeOut.config(1, 0.3),
-            scale: 1.1
-          });
+        ease: Power2.easeOut,
+      }).then(() => {
+        var Cont = { val: 0 },
+          NewVal = 100;
+        TweenMax.to(overlay, 1, {
+          // y: 10,
+          opacity: 0,
         });
+        TweenMax.to(tx_cp, 1, {
+          y: 10,
+          opacity: 0,
+        });
+        TweenMax.to(btn_cp, 1, {
+          y: 10,
+          opacity: 0,
+        }).then(() => {
+          document.querySelector("#webcBtn").remove();
+          document.querySelector(".overlay").style.bottom = "unset";
+        });
+        TweenMax.to(progress, 1, {
+          y: 0,
+          opacity: 1,
+        }).then(() => {
+          // document.querySelector("#indicator").style.strokeDashoffset = 'calc(440 - (440 * 90) / 100)';
+          TweenMax.to(circle, 5, {
+            strokeDashoffset: 0,
+            ease: Power3.easeInOut,
+            delay: 0.7,
+          });
+          TweenMax.to(Cont, 5, {
+            val: NewVal,
+            ease: Power3.easeInOut,
+            roundProps: "val",
+            delay: 0.7,
+            onUpdate: function () {
+              document.getElementById("ind_num").innerHTML = Cont.val;
+            },
+          })
+            .then(() => {
+              let des = document.querySelector("#desc-contain");
+              let child = des.lastElementChild;
+              while (child) {
+                des.removeChild(child);
+                child = des.lastElementChild;
+              }
+              des = document.querySelector("#forcast_link");
+              console.log(des);
+              let para = document.createElement("div");
+              para.className += "bouncing-ani eng";
+              para.style.transition = undefined;
+              para.style.width = undefined;
+              var t = document.createTextNode("Get Results");
+              para.appendChild(t);
+              des.appendChild(para);
+              console.log("btn created");
+            })
+            .then(() => {
+              let btnb = document.querySelector(".bouncing-ani");
+              TweenMax.to(btnb, 2, {
+                ease: Elastic.easeOut.config(1, 0.3),
+                scale: 1.1,
+              });
+            });
+        });
+      });
     });
   }, [webcamRef]);
 
@@ -90,7 +114,7 @@ export default function HandScan() {
       <div id="handscan">
         <Webcam
           audio={false}
-          ref={el => {
+          ref={(el) => {
             webcamRef = el;
           }}
           screenshotFormat="image/jpeg"
@@ -100,7 +124,16 @@ export default function HandScan() {
           videoConstraints={videoConstraints}
           id="webcam"
         />
+
         <img src="" id="pic-web" alt="" />
+        <div className="overlay-bg">
+          <Overlay
+            width="1280"
+            ref={(el) => {
+              overlay = el;
+            }}
+          />
+        </div>
         <div className="overlay">
           {/* <img
             width="500"
@@ -110,7 +143,7 @@ export default function HandScan() {
           <br />
           <div
             className="card-wrapper"
-            ref={el => {
+            ref={(el) => {
               progress = el;
             }}
           >
@@ -123,7 +156,7 @@ export default function HandScan() {
                     cy="70"
                     r="70"
                     id="indicator"
-                    ref={el => {
+                    ref={(el) => {
                       circle = el;
                     }}
                   />
@@ -143,11 +176,19 @@ export default function HandScan() {
               </div>
             </div>
           </div>
+          <p
+            className="eng txt"
+            ref={(el) => {
+              tx_cp = el;
+            }}
+          >
+            Place palm inside outline
+          </p>
           <img
             src={WebcamBtn}
             onClick={capture}
             id="webcBtn"
-            ref={el => {
+            ref={(el) => {
               btn_cp = el;
             }}
           />
