@@ -519,10 +519,10 @@ select {
 
 .overlay-bg {
   position: absolute;
-  right: 0;
+  // right: 0;
   transform: translateY(1%);
   // bottom: 10%;
-  left: 0;
+  // left: 0;
   #main_x5F_hand {
     // opacity: 0;
     stroke-dasharray: 2457.107421875;
@@ -532,16 +532,20 @@ select {
 
 .overlay {
   position: absolute;
-  right: 0;
+  // right: 0;
   bottom: 4%;
-  left: 0;
+  // left: 0;
   // color: ;
   text-align: center;
   .txt {
     font-size: 1.2em;
+    margin-bottom: .5em;
   }
   .number{
     color: white;
+  }
+  svg {
+    cursor: pointer;
   }
   img {
     // transform: scaleX(-1);
