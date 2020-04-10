@@ -37,7 +37,7 @@ export default function HandWait() {
           <p>Take a photo of the palms to get your personal prediction</p>
         </div>
         <Link to={`/handscan`}>
-          <div className="btn-long">TAKE A PHOTO</div>
+          <div className="btn-long take-photo">TAKE A PHOTO</div>
         </Link>
       </FadeIn>
     </div>
