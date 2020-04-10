@@ -5,6 +5,7 @@ import WebcamBtn from "../assets/webcam-btn.png";
 import { TweenMax, Elastic, Power3, Power2 } from "gsap";
 import { Link } from "react-router-dom";
 import { ReactComponent as Overlay } from "../assets/overlay.svg";
+import {ReactComponent as Camera_tigger} from '../assets/camera_tigger.svg'
 
 export default function HandScan() {
   const videoConstraints = {
@@ -128,7 +129,7 @@ export default function HandScan() {
         <img src="" id="pic-web" alt="" />
         <div className="overlay-bg">
           <Overlay
-            width="1280"
+            width="1283"
             ref={(el) => {
               overlay = el;
             }}
@@ -184,14 +185,20 @@ export default function HandScan() {
           >
             Place palm inside outline
           </p>
-          <img
+          <Camera_tigger onClick={capture}
+            id="webcBtn"
+            width="100"
+            ref={(el) => {
+              btn_cp = el;
+            }}/>
+          {/* <img
             src={WebcamBtn}
             onClick={capture}
             id="webcBtn"
             ref={(el) => {
               btn_cp = el;
             }}
-          />
+          /> */}
           {/* <button onClick={capture}>Capture photo</button> */}
           <span className="ouro ouro3">
             <span className="left">

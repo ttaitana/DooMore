@@ -520,6 +520,7 @@ select {
 .overlay-bg {
   position: absolute;
   right: 0;
+  transform: translateY(1%);
   // bottom: 10%;
   left: 0;
   #main_x5F_hand {
@@ -532,7 +533,7 @@ select {
 .overlay {
   position: absolute;
   right: 0;
-  bottom: 6%;
+  bottom: 4%;
   left: 0;
   // color: ;
   text-align: center;
@@ -575,7 +576,7 @@ select {
     h1 {
       font-size: 3.5em;
       font-weight: normal;
-      margin-bottom: 2em;
+      margin-bottom: .5em;
       margin-top: 2em;
     }
     .sub-logo {
@@ -603,6 +604,8 @@ select {
   }
   .flip-card-wrapper {
     margin-top: 10%;
+    opacity: 0;
+    transform: translateY(20px);
   }
   .btn-wrapper {
     display: flex;
@@ -636,6 +639,9 @@ select {
     transition: transform 1s ease-out;
     transform-style: preserve-3d;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    svg{
+      width: 20%;
+    }
   }
   .flip-card-front,
   .flip-card-back {

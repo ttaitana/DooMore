@@ -4,7 +4,7 @@ import { ReactComponent as FullCard1 } from "../assets/card_set/answer1.svg";
 import { ReactComponent as FullCard2 } from "../assets/card_set/answer2.svg";
 import { ReactComponent as FullCard3 } from "../assets/card_set/answer3.svg";
 import { ReactComponent as FullCard4 } from "../assets/card_set/answer4.svg";
-import shop_button from "../assets/card_set/shop_button.png";
+import {ReactComponent as Shop_button} from "../assets/shop_btn.svg";
 import {Link} from 'react-router-dom'
 import FadeIn from "react-fade-in";
 import { useEffect } from "react";
@@ -53,9 +53,9 @@ export default function Result() {
       </div>
       <FadeIn className="s60" delay="500" transitionDuration="700">
         <h1>{title[card_id - 1]}</h1>
-        <p>&ensp;&ensp;{desc[card_id - 1]}</p>
+        <p>{desc[card_id - 1]}</p>
         <Link to="/inconstruct">
-          <img src={shop_button} width="200" />
+          <Shop_button width="200"/>
         </Link>
       </FadeIn>
     </div>
