@@ -4,11 +4,12 @@ import { ReactComponent as FullCard1 } from "../assets/card_set/answer1.svg";
 import { ReactComponent as FullCard2 } from "../assets/card_set/answer2.svg";
 import { ReactComponent as FullCard3 } from "../assets/card_set/answer3.svg";
 import { ReactComponent as FullCard4 } from "../assets/card_set/answer4.svg";
-import {ReactComponent as Shop_button} from "../assets/shop_btn.svg";
-import {Link} from 'react-router-dom'
+import { ReactComponent as Shop_button } from "../assets/shop_btn.svg";
+import { Link } from "react-router-dom";
 import FadeIn from "react-fade-in";
 import { useEffect } from "react";
 import { TweenMax } from "gsap";
+import BGMusic from "../assets/home/sound_s.mp3";
 
 export default function Result() {
   let { card_id } = useParams();
@@ -43,6 +44,10 @@ export default function Result() {
 
   return (
     <div id="result" className="thai">
+      <audio autoPlay preload loop volume={0.5} id="music">
+        <source src={BGMusic} type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
       <div
         className="s40"
         ref={(el) => {
@@ -55,7 +60,7 @@ export default function Result() {
         <h1>{title[card_id - 1]}</h1>
         <p>{desc[card_id - 1]}</p>
         <Link to="/inconstruct">
-          <Shop_button width="200"/>
+          <Shop_button width="200" className="logo_scale"/>
         </Link>
       </FadeIn>
     </div>

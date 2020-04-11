@@ -14,6 +14,8 @@ import FadeIn from "react-fade-in";
 import Decorator from "../assets/videos/flip_card_bg.mp4";
 import '../style/main.scss'
 import { useEffect } from "react";
+import BGMusic from "../assets/home/sound_s.mp3";
+
 
 export default function CardFlip() {
   let { card_id } = useParams();
@@ -49,6 +51,10 @@ export default function CardFlip() {
   return (
     <div id="cardflip">
       {/* <p>Card id is {card_id}</p> */}
+      <audio autoPlay preload loop volume={0.5} id="music">
+          <source src={BGMusic} type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
       <div className="video-container">
         <FadeIn transitionDuration="500">
           <video autoPlay loop className="myVideo">
