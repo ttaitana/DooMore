@@ -539,9 +539,9 @@ select {
   text-align: center;
   .txt {
     font-size: 1.2em;
-    margin-bottom: .5em;
+    margin-bottom: 0.5em;
   }
-  .number{
+  .number {
     color: white;
   }
   svg {
@@ -580,7 +580,7 @@ select {
     h1 {
       font-size: 3.4em;
       font-weight: normal;
-      margin-bottom: .5em;
+      margin-bottom: 0.5em;
       margin-top: 2em;
     }
     .sub-logo {
@@ -643,7 +643,7 @@ select {
     transition: transform 1s ease-out;
     transform-style: preserve-3d;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    svg{
+    svg {
       width: 20%;
     }
   }
@@ -735,11 +735,166 @@ select {
     p {
       font-size: 1.2em;
       text-align: center;
-      color: #A97C50;
+      color: #a97c50;
     }
   }
 }
 
-.take-photo{
+.take-photo {
   margin-top: 1em;
+}
+
+#preshop {
+  overflow: hidden;
+  img {
+    height: 100vh;
+    transform: translateX(-20%);
+    opacity: 0;
+  }
+  .columns {
+    display: flex;
+  }
+  .image-container {
+    // position: absolute;
+    // z-index: -3;
+    width: 60vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40vw;
+    background: rgba(196, 154, 108, 0.1);
+    p {
+      font-size: 1.3em;
+    }
+  }
+  .loading {
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    bottom: 0;
+    width: 60vw;
+    height: 100vh;
+    top: 50%;
+    // height: 100vh;
+  }
+  .btn {
+    margin-top: 2em;
+    width: 12rem;
+    &:hover {
+      background: $font-color;
+      color: white;
+    }
+  }
+}
+
+#contract2 {
+  height: 100vh;
+  overflow-y: auto;
+  font-family: "LibreBaskerville";
+  font-size: 1.3rem;
+  background: $base-color;
+  h1 {
+    font-size: 3.5em;
+    margin-bottom: 0;
+  }
+  input,
+  textarea {
+    text-align: left;
+    padding-left: 1em;
+  }
+  input[type="submit"] {
+    text-align: center;
+  }
+  .wrapper {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    height: 17vh;
+    width: 100%;
+    background: rgba(197, 158, 110, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    div {
+      padding: 1rem 2rem 0 2rem;
+      width: 40%;
+    }
+  }
+}
+
+#wait-shop {
+  padding: 0 2% 0 2%;
+  
+  .goods {
+    display: flex;
+    flex-wrap: wrap;
+    .good {
+      cursor: pointer;
+      flex: 1 0 42vw; /* explanation below */
+      margin-bottom: 1em;
+      padding: 1em 1em 0 1em;
+      transition: .4s;
+      &:hover{
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+      }
+      p {
+        text-align: left;
+        margin-top: 0.5em;
+      }
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+#shop {
+  padding: 0 2% 0 2%;
+    .mini-nav{
+      padding: 0 10% 0 10%;
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 2em;
+      .sec{
+        cursor: pointer;
+        padding: .5em;
+        border-bottom: 4px transparent solid;
+      }
+      .active{
+        border-bottom: 4px rgba(197, 158, 110, 0.6) solid;
+      }
+    }
+  .allset {
+    margin-bottom: 3em;
+    padding: 0 10% 0 10%;
+    p, h1 {
+      text-align: left;
+      margin-top: 0.5em;
+    }
+    h1{
+      margin-bottom: 0;
+    }
+    img{
+      width: 100%;
+    }
+  }
+  .goods {
+    display: flex;
+    flex-wrap: wrap;
+    .good {
+      flex: 1 0 42vw; /* explanation below */
+      margin-bottom: 1em;
+      padding: 0 1em 0 1em;
+      p {
+        text-align: left;
+        margin-top: 0.5em;
+      }
+      img {
+        width: 100%;
+      }
+    }
+  }
 }

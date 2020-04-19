@@ -1,0 +1,162 @@
+    [
+        {
+            "set": "Mix",
+            "name": "fate",
+            "price": 7000,
+            "title": "เซตเสริมดวง",
+            "goods": [
+                {
+                    "name": "Bracelet",
+                    "price": 1900
+                },
+                {
+                    "name": "Pen",
+                    "price": 400
+                },
+                {
+                    "name": "Pencil",
+                    "price": 200
+                },
+                {
+                    "name": "Eraser",
+                    "price": 100
+                },
+                {
+                    "name": "Marker",
+                    "price": 400
+                },
+                {
+                    "name": "Liquid",
+                    "price": 300
+                },
+                {
+                    "name": "Notepad",
+                    "price": 300
+                },
+                {
+                    "name": "Notebook",
+                    "price": 700
+                }
+            ]
+        },
+        {
+            "set": "Mix",
+            "price": 5000,
+            "title": "เซตความรัก",
+            "name": "love",
+            "goods": [
+                {
+                    "name": "Lovely dairy book",
+                    "price": 1200
+                },
+                {
+                    "name": "Pen",
+                    "price": 400
+                },
+                {
+                    "name": "Pencil",
+                    "price": 200
+                },
+                {
+                    "name": "Eraser",
+                    "price": 100
+                },
+                {
+                    "name": "Marker",
+                    "price": 400
+                },
+                {
+                    "name": "Liquid",
+                    "price": 300
+                },
+                {
+                    "name": "Notepad",
+                    "price": 300
+                },
+                {
+                    "name": "Notebook",
+                    "price": 700
+                }
+            ]
+        },
+        {
+            "set": "Mix",
+            "price": 5000,
+            "title": "เซตสุขภาพ",
+            "name": "health",
+            "goods": [
+                {
+                    "name": "Health tracker book",
+                    "price": 1200
+                },
+                {
+                    "name": "Pen",
+                    "price": 400
+                },
+                {
+                    "name": "Pencil",
+                    "price": 200
+                },
+                {
+                    "name": "Eraser",
+                    "price": 100
+                },
+                {
+                    "name": "Marker",
+                    "price": 400
+                },
+                {
+                    "name": "Liquid",
+                    "price": 300
+                },
+                {
+                    "name": "Notepad",
+                    "price": 300
+                },
+                {
+                    "name": "Notebook",
+                    "price": 700
+                }
+            ]
+        },
+        {
+            "set": "Mix",
+            "price": 5000,
+            "title": "เซตการเงิน",
+            "name": "finance",
+            "goods": [
+                {
+                    "name": "Cash book",
+                    "price": 1200
+                },
+                {
+                    "name": "Pen",
+                    "price": 400
+                },
+                {
+                    "name": "Pencil",
+                    "price": 200
+                },
+                {
+                    "name": "Eraser",
+                    "price": 100
+                },
+                {
+                    "name": "Marker",
+                    "price": 400
+                },
+                {
+                    "name": "Liquid",
+                    "price": 300
+                },
+                {
+                    "name": "Notepad",
+                    "price": 300
+                },
+                {
+                    "name": "Notebook",
+                    "price": 700
+                }
+            ]
+        }
+    ]

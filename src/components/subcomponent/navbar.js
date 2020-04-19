@@ -13,13 +13,13 @@ export default class Navbar extends Component {
       <div className="nav">
         <div className="nav-header">
           <div className="nav-title">
-            <Link to="/">
+            <Link to="/home">
               <Logo width={50} />
             </Link>
           </div>
         </div>
         <div className="nav-btn">
-          <label for="nav-check">
+          <label htmlFor="nav-check">
             <span></span>
             <span></span>
             <span></span>
@@ -27,7 +27,7 @@ export default class Navbar extends Component {
         </div>
 
         <div className="nav-links">
-          <Link to="/home">
+          <Link to="/shop">
             <Shop width={50} id="shop-logo" />
           </Link>
           <Popup

@@ -59,7 +59,7 @@ export default function Result() {
       <FadeIn className="s60" delay="500" transitionDuration="700">
         <h1>{title[card_id - 1]}</h1>
         <p>{desc[card_id - 1]}</p>
-        <Link to="/inconstruct">
+        <Link to={`/preshop/${card_id}`}>
           <Shop_button width="200" className="logo_scale"/>
         </Link>
       </FadeIn>
