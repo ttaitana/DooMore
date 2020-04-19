@@ -69,16 +69,16 @@ class Shop extends React.Component {
         <Navbar />
         <div id="shop" className="eng">
           <div className="mini-nav">
-            <div className={"sec " + (goods_set_id == 0 ? "active" : null)} onClick={() => {this.selectGoods(0)}}>
+            <div className={"sec thai " + (goods_set_id == 0 ? "active" : null)} onClick={() => {this.selectGoods(0)}}>
               ชุดเสริมดวง
             </div>
-            <div className={"sec " + (goods_set_id == 1 ? "active" : null)} onClick={() => {this.selectGoods(1)}}>
+            <div className={"sec thai " + (goods_set_id == 1 ? "active" : null)} onClick={() => {this.selectGoods(1)}}>
               ชุดความรัก
             </div>
-            <div className={"sec " + (goods_set_id == 2 ? "active" : null)} onClick={() => {this.selectGoods(2)}}>
+            <div className={"sec thai " + (goods_set_id == 2 ? "active" : null)} onClick={() => {this.selectGoods(2)}}>
               ชุดสุขภาพ
             </div>
-            <div className={"sec " + (goods_set_id == 3 ? "active" : null)} onClick={() => {this.selectGoods(3)}}>
+            <div className={"sec thai " + (goods_set_id == 3 ? "active" : null)} onClick={() => {this.selectGoods(3)}}>
               ชุดการเงิน
             </div>
           </div>

@@ -22,7 +22,7 @@ export default class Contract extends Component {
 
           <p htmlFor="message">ADDRESS</p>
           <textarea name="message" cols="30" rows="8"></textarea>
-          <input type="submit" value="send message" className="send-contract eng" />
+          <input type="submit" value="PAY" className="send-contract eng" />
         </form>
         <br/>
       </div>

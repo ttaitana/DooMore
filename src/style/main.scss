@@ -828,7 +828,7 @@ select {
 
 #wait-shop {
   padding: 0 2% 0 2%;
-  
+
   .goods {
     display: flex;
     flex-wrap: wrap;
@@ -837,9 +837,9 @@ select {
       flex: 1 0 42vw; /* explanation below */
       margin-bottom: 1em;
       padding: 1em 1em 0 1em;
-      transition: .4s;
-      &:hover{
-        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+      transition: 0.4s;
+      &:hover {
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
       }
       p {
         text-align: left;
@@ -853,31 +853,34 @@ select {
 }
 #shop {
   padding: 0 2% 0 2%;
-    .mini-nav{
-      padding: 0 10% 0 10%;
-      display: flex;
-      justify-content: space-around;
-      margin-bottom: 2em;
-      .sec{
-        cursor: pointer;
-        padding: .5em;
-        border-bottom: 4px transparent solid;
-      }
-      .active{
-        border-bottom: 4px rgba(197, 158, 110, 0.6) solid;
-      }
+  .mini-nav {
+    padding: 0 10% 0 10%;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2em;
+    transition: 1s;
+    .sec {
+      transition: .5s;
+      cursor: pointer;
+      padding: 0.5em;
+      border-bottom: 4px transparent solid;
     }
+    .active {
+      border-bottom: 4px rgba(197, 158, 110, 0.6) solid;
+    }
+  }
   .allset {
     margin-bottom: 3em;
     padding: 0 10% 0 10%;
-    p, h1 {
+    p,
+    h1 {
       text-align: left;
       margin-top: 0.5em;
     }
-    h1{
+    h1 {
       margin-bottom: 0;
     }
-    img{
+    img {
       width: 100%;
     }
   }
