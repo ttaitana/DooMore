@@ -8,6 +8,8 @@ import image_set from "./image_set.json";
 import { Link } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import Popup from "reactjs-popup";
+import InsideBook from "./inside";
 
 class Shop extends React.Component {
   constructor(props) {
@@ -118,16 +120,35 @@ class Shop extends React.Component {
                 className={"good " + (item.price == 1200 ? "hoverable" : null)}
               >
                 {item.price == 1200 ? (
-                  <Link to={`/inside_book/${goods.title}`}>
-                    <LazyLoadImage
-                      src={require(`../assets/doomore_shop/${goods.name}/${item.name}.jpg`)}
-                      effect="blur"
-                      alt=""
-                    />
-                    <p>{item.name}</p>
-                    <p>฿{item.price}</p>
-                  </Link>
+                  <Popup
+                    trigger={
+                      <div>
+                        <LazyLoadImage
+                          src={require(`../assets/doomore_shop/${goods.name}/${item.name}.jpg`)}
+                          effect="blur"
+                          alt=""
+                        />
+                        <p>{item.name}</p>
+                        <p>฿{item.price}</p>
+                      </div>
+                    }
+                    modal
+                    closeOnDocumentClick
+                    repositionOnResize
+                    lockScroll
+                  >
+                    <InsideBook book={goods.title}/>
+                  </Popup>
                 ) : (
+                  // <Link to={`/inside_book/${goods.title}`}>
+                  //   <LazyLoadImage
+                  //     src={require(`../assets/doomore_shop/${goods.name}/${item.name}.jpg`)}
+                  //     effect="blur"
+                  //     alt=""
+                  //   />
+                  //   <p>{item.name}</p>
+                  //   <p>฿{item.price}</p>
+                  // </Link>
                   <div>
                     <LazyLoadImage
                       src={require(`../assets/doomore_shop/${goods.name}/${item.name}.jpg`)}

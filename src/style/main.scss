@@ -913,9 +913,11 @@ select {
 }
 
 #inside_book{
+  overflow-y: auto;
+  height: 100vh;
   padding: 0 2% 0 2%;
   background: rgba(196, 154, 108, .26);
-  height: 100vh;
+  // height: 100vh;
   h1{
     width: 100vw;
   }

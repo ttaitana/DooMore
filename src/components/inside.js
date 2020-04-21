@@ -4,8 +4,11 @@ import "../style/main.scss";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
-function InsideBook() {
-  let { book } = useParams();
+function InsideBook(props) {
+  let { book } = props;
+  console.log('====================================');
+  console.log(props.book);
+  console.log('====================================');
   const img = {
     เซตความรัก: [
       "เซตความรัก1.png",
