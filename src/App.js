@@ -18,6 +18,7 @@ import CardFlip from './components/cardflip'
 import Result from './components/result' 
 import Preshop from './components/preshop'
 import Shop from './components/shop'
+import Inside from './components/inside'
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
         <Route path="/result/:card_id" render={props => <Result {...props}/>}/>
         <Route path="/preshop/:card_id" render={props => <Preshop {...props}/>}/>
         <Route path="/shop" render={props => <Shop {...props}/>}/>
+        <Route path="/inside_book/:book" render={props => <Inside {...props}/>}/>
       </Switch>
     </div>
   );

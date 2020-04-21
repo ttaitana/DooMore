@@ -853,6 +853,9 @@ select {
 }
 #shop {
   padding: 0 2% 0 2%;
+  a{
+    color: $font-color;
+  }
   .mini-nav {
     padding: 0 10% 0 10%;
     display: flex;
@@ -860,7 +863,7 @@ select {
     margin-bottom: 2em;
     transition: 1s;
     .sec {
-      transition: .5s;
+      transition: 0.5s;
       cursor: pointer;
       padding: 0.5em;
       border-bottom: 4px transparent solid;
@@ -870,8 +873,7 @@ select {
     }
   }
   .allset {
-    margin-bottom: 3em;
-    padding: 0 10% 0 10%;
+    margin-bottom: 2em;
     p,
     h1 {
       text-align: left;
@@ -884,13 +886,47 @@ select {
       width: 100%;
     }
   }
+  .hoverable {
+    cursor: pointer;
+    transition: 0.4s;
+    &:hover {
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    }
+  }
   .goods {
     display: flex;
     flex-wrap: wrap;
     .good {
       flex: 1 0 42vw; /* explanation below */
       margin-bottom: 1em;
-      padding: 0 1em 0 1em;
+      padding: 1em 1em 0 1em;
+      // padding: 0 1em 0 1em;
+      p {
+        text-align: left;
+        margin-top: 0.5em;
+      }
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+#inside_book{
+  padding: 0 2% 0 2%;
+  background: rgba(196, 154, 108, .26);
+  height: 100vh;
+  h1{
+    width: 100vw;
+  }
+  .goods {
+    display: flex;
+    flex-wrap: wrap;
+    .good {
+      flex: 1 0 30vw; /* explanation below */
+      margin-bottom: 1em;
+      // padding: 1em 1em 0 1em;
+      // padding: 0 1em 0 1em;
       p {
         text-align: left;
         margin-top: 0.5em;

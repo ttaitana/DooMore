@@ -5,6 +5,7 @@ import { withRouter } from "react-router-dom";
 import FadeIn from "react-fade-in";
 import BeatLoader from "react-spinners/BeatLoader";
 import image_set from "./image_set.json";
+import { Link } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
@@ -26,13 +27,12 @@ class Shop extends React.Component {
     });
   };
 
-  componentDidMount(){
-      try{
-          this.selectGoods(this.props.location.state.goods_set_id)
-        }
-        catch{
-            //pass
-        }
+  componentDidMount() {
+    try {
+      this.selectGoods(this.props.location.state.goods_set_id);
+    } catch {
+      //pass
+    }
   }
 
   render() {
@@ -69,16 +69,36 @@ class Shop extends React.Component {
         <Navbar />
         <div id="shop" className="eng">
           <div className="mini-nav">
-            <div className={"sec thai " + (goods_set_id == 0 ? "active" : null)} onClick={() => {this.selectGoods(0)}}>
+            <div
+              className={"sec thai " + (goods_set_id == 0 ? "active" : null)}
+              onClick={() => {
+                this.selectGoods(0);
+              }}
+            >
               ชุดเสริมดวง
             </div>
-            <div className={"sec thai " + (goods_set_id == 1 ? "active" : null)} onClick={() => {this.selectGoods(1)}}>
+            <div
+              className={"sec thai " + (goods_set_id == 1 ? "active" : null)}
+              onClick={() => {
+                this.selectGoods(1);
+              }}
+            >
               ชุดความรัก
             </div>
-            <div className={"sec thai " + (goods_set_id == 2 ? "active" : null)} onClick={() => {this.selectGoods(2)}}>
+            <div
+              className={"sec thai " + (goods_set_id == 2 ? "active" : null)}
+              onClick={() => {
+                this.selectGoods(2);
+              }}
+            >
               ชุดสุขภาพ
             </div>
-            <div className={"sec thai " + (goods_set_id == 3 ? "active" : null)} onClick={() => {this.selectGoods(3)}}>
+            <div
+              className={"sec thai " + (goods_set_id == 3 ? "active" : null)}
+              onClick={() => {
+                this.selectGoods(3);
+              }}
+            >
               ชุดการเงิน
             </div>
           </div>
@@ -94,14 +114,30 @@ class Shop extends React.Component {
           </div>
           <div className="goods">
             {goods.goods.map((item) => (
-              <div className="good">
-                <LazyLoadImage
-                  src={require(`../assets/doomore_shop/${goods.name}/${item.name}.jpg`)}
-                  effect="blur"
-                  alt=""
-                />
-                <p>{item.name}</p>
-                <p>฿{item.price}</p>
+              <div
+                className={"good " + (item.price == 1200 ? "hoverable" : null)}
+              >
+                {item.price == 1200 ? (
+                  <Link to={`/inside_book/${goods.title}`}>
+                    <LazyLoadImage
+                      src={require(`../assets/doomore_shop/${goods.name}/${item.name}.jpg`)}
+                      effect="blur"
+                      alt=""
+                    />
+                    <p>{item.name}</p>
+                    <p>฿{item.price}</p>
+                  </Link>
+                ) : (
+                  <div>
+                    <LazyLoadImage
+                      src={require(`../assets/doomore_shop/${goods.name}/${item.name}.jpg`)}
+                      effect="blur"
+                      alt=""
+                    />
+                    <p>{item.name}</p>
+                    <p>฿{item.price}</p>
+                  </div>
+                )}
               </div>
             ))}
           </div>
