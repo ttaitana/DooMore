@@ -6,9 +6,6 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 
 function InsideBook(props) {
   let { book } = props;
-  console.log('====================================');
-  console.log(props.book);
-  console.log('====================================');
   const img = {
     เซตความรัก: [
       "เซตความรัก1.png",
@@ -36,7 +33,7 @@ function InsideBook(props) {
   return (
     <div id="inside_book">
       <div className="goods">
-        <h1>{book}</h1>
+        <h1 className="thai">{book}</h1>
         {img[book].map((image) => (
           <div className="good">
             <LazyLoadImage
